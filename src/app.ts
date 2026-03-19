@@ -1,16 +1,14 @@
 import express, { Request, Response } from "express";
+import dotenv from "dotenv";
 
-require("dotenv").config();
+import { toNodeHandler } from "@hot-updater/server/node";
+import { hotUpdater } from "./hotUpdater.js";
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT;
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World with TypeScript and Express!");
-});
+app.all("/hot-updater/*name", toNodeHandler(hotUpdater));
 
-app.listen(PORT, () => {
-  console.log(
-    `Server is running on [http://localhost:${PORT}](http://localhost:${PORT})`,
-  );
-});
+app.listen(3000);
