@@ -6,6 +6,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+console.log("lorem!");
+
 export const hotUpdater = createHotUpdater({
   database: mongoAdapter({ client }),
   storages: [
