@@ -11,7 +11,7 @@
     "target": "ES2022",
     "module": "preserve",
     "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
+    "exactOptionalPropertyTypes": false,
     "rootDir": "./src",
     "outDir": "./dist"
   }
